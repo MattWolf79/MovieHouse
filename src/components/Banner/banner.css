@@ -1,0 +1,147 @@
+.Banner{
+    background-size: cover;
+    /* background-position: cover; */
+    background-repeat: repeat-y;
+    font-size: 25px;
+    object-fit: cover;
+    height: 1800px;
+    width: auto;
+    padding: 1px;
+    color: rgb(248, 242, 242);
+    margin:0;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
+    url("../../img/1154.jpg");  
+  }
+  .BannerButton{
+    background-position: center;
+    align-content: center;
+  }
+  .banner-container{
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    max-width: 1280px;
+    margin: 0;
+    color: black;
+    font-size: 62px;
+    font-weight: bold ;
+
+  }
+  .List{
+    background-color: black;
+    margin: 0;
+    /* display: none; */
+    color: black;
+    text-align: center;
+  }
+  .Banner h1{
+    margin: 0;
+    color: rgb(219, 219, 232);
+    background-position: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 62px;
+    align-content: center;
+  }
+  .Banner p{
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    align-content: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  .list{
+    background-color: black;
+    margin: 0;
+    display: flex;
+    color: white;
+    text-align: center;
+  }
+
+.item-add-button {
+  background-color: #5cb85c;
+  border-radius: 5px;
+  text-align: center;
+  color: #0e0505;
+  border: double;
+  font-size: 17px;
+  display: flex;
+  cursor: pointer;
+  align-content: center;
+  height: 45px;
+  width: 250px;
+}
+.item-box {
+  background-color: #9c1616;
+  margin: 10px;
+  display: flex;
+  padding: 20px;
+  width: 110px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.item-price {
+  color: rgb(243, 237, 237);
+  text-align: left;
+  display: flex;  
+  height: 20%;
+  width: 50px;
+}
+.item-category_1 {
+  color: rgb(238, 235, 235);
+  text-align: left;
+  display: flex;
+  font-size: 20px;
+  height: 20%;
+  width: 50px;
+}
+
+.item-category_2 {
+  color: white;
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+}
+  @media screen and (max-width:640px){
+    .list{
+      background-color: black;
+      margin: 0;
+      color: white;
+      text-align: center;
+    }
+  }
+  .item-add-button {
+    background-color: #5cb85c;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0;
+    border: none;
+    display: grid;
+    font-size: 17px;
+    align-content: center;
+    cursor: pointer;
+    height: 45px;
+    width: 250px;
+  }
+  .item-box {
+    background-color: #9c1616;
+    margin: 10px;
+    display: flex;
+    padding: 20px;
+    width: 110px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+
+  .item-price {
+    color: rgb(249, 244, 244);
+    text-align: left;
+    font-size: 20px;
+    display: flex;
+  }

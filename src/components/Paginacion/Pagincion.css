@@ -1,0 +1,15 @@
+.pagination justify-content-center{    
+    background-size: cover;
+    background-position: center;
+    font-size: 25px;
+    object-fit: cover;
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color: rgb(12, 2, 2);
+    margin:20px;
+    padding: 5px;
+    cursor: pointer;
+    /* text-decoration: none; */
+}

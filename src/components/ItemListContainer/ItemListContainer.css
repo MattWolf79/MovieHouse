@@ -1,0 +1,21 @@
+.ItemListContainer{
+    background-size: cover;
+    background-position: center;
+    font-size: 25px;
+    object-fit: cover;
+    height: 1200px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color: rgb(241, 233, 233);
+    margin:20px;
+    cursor: pointer;
+    /* text-decoration: none; */
+  }
+  @media screen and (max-width:640px){
+    .ItemListContainer{
+      display: flex;
+      overflow: scroll;
+    }
+    
+  }
