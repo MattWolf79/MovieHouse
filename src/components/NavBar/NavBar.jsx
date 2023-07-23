@@ -18,21 +18,21 @@ const NavBar = () => {
         {/*  <--! buscador de videos--!> */}
         <div>
           <div>
-            <input
+          <input
               className="NavBar-text"
               type="search"
               placeholder="Busca tu pelicula aquí"
               aria-label="Search"
             />
-
             <button
               type="button"
-              className="NavBar-button"
+              className="btn btn-secondary btn-lg"
               width="16px"
               height="16px"
             >
               Buscar
             </button>
+            
           </div>
         </div>
         {/* botón para el menú, que debería contenet los li  */}
@@ -51,29 +51,48 @@ const NavBar = () => {
           </button>
           <nav className="NavBar-ul">
             <NavLink to="/">
-              <nav className="NavBar-li">
-                <a href="#">Inicio</a>
-              </nav>
+              <nav className="NavBar-li">Inicio</nav>
             </NavLink>
 
-            <nav className="NavBar-li">
-              <a href="#">Genero</a>
-            </nav>
-            <NavLink to={"/category/accion"} className="NavBar-li">
-              Accion
-            </NavLink>
-            <NavLink to={"/category/aventura"} className="NavBar-li">
-              Aventura
-            </NavLink>
-            <NavLink to={"/category/terror"} className="NavBar-li">
-              Terror
-            </NavLink>
-            <nav className="NavBar-li">
-              <a href="#">Ayuda</a>
-            </nav>
+            <div className="container">
+              <div className="dropdown" color="green">
+                <button
+                  className="btn btn-default dropdown-toggle btn-lg"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  Genero
+                  <span className="caret"></span>
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <NavLink to={"/category/terror"}>Terror</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/aventura"}>Aventura</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/accion"}>Accion</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/accion"}>Drama</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
           </nav>
+          
         </nav>
-        <button className="NavBar-button">
+        <nav className="NavBar-li">
+          <a href="#">Ayuda</a>
+        </nav>
+
+        
+        <div className="Carrito">
+          <a href="#"></a> <Carrito />{" "}
+        </div>
+        <button className="btn btn-secondary btn-lg">
           <svg
             className="NavBar-svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -85,10 +104,6 @@ const NavBar = () => {
             <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
           </svg>
         </button>
-        <h2 className="Carrito">
-          {" "}
-          <a href="#"></a> <Carrito />{" "}
-        </h2>
       </nav>
       <Outlet />
     </div>

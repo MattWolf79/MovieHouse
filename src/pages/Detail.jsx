@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import { ItemCount } from "../components";
 import { getMovie } from "../movie/ProductMovies.jsx";
+import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export const Detail = () => {
@@ -32,6 +33,9 @@ export const Detail = () => {
           <div>
           <span className="detail__info-stock"><strong>¡Quedan solo {movie.stock}!</strong></span>
           </div>
+          <NavLink to="/">
+            <button className="item-add-button" >Atrás</button>
+            </NavLink>
             
           {/* <ItemCount stock={movie.stock} onAdd={() => alert("Comprados")} /> */}
         </div>

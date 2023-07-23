@@ -115,7 +115,7 @@ export const movies = [
     price: 450,
     description:
       "Noah tiene que dejar atrás su ciudad, su novio y sus amigos y mudarse a la mansión del nuevo marido rico de su madre. Allí conoce a Nick, su nuevo hermanastro. Se enamoran locamente en secreto.",
-    img: "https://pics.filmaffinity.com/culpa_mia-785263687-large.jpg",
+    img: "https://pbs.twimg.com/media/FqI7ZR6XoAAqa4W?format=jpg&name=medium",
     stock: 4,
   },
   {
