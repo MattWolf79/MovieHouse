@@ -1,4 +1,3 @@
-import NavBarLogo from "../NavBarLogo/NavBarLogo";
 import "./NavBar.css";  
 import { useState } from 'react';
 import {NavLink,  Outlet } from "react-router-dom";
@@ -14,9 +13,7 @@ const NavBar = () =>{
 <div>  
 
   <nav className="NavBar" >
-  {/* <nav className="NavBarLogo"/> */}
   <NavLink to="/">
-  {/* <NavBarLogo/>   */}
 
    <img className="NavBarLogo" src={"../src/img/logoCata.png"}/>
    </NavLink>

@@ -79,6 +79,22 @@
   margin: 0 .5em;
   color: aliceblue;
 }
+.NavBarLogo {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(106, 102, 102);
+  width: 130%;
+  height: 5em;
+  float: left;
+  position:inherit;
+  color: rgb(163, 154, 154);
+  object-fit: center;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
+  url("../../img/logoCata.png");   */
+
+  
+}
 @media screen and (max-width:640px) {
   .NavBar-button{
     display: none;

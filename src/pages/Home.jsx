@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import Banner from '../components/Banner/Banner.css';
+import  '../components/Banner/banner.css';
 import {getMovies} from "../movie/ProductMovies"
-// import NavBar from '../components/NavBar/NavBar'
 import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer'
 
 export const Home = () => {
@@ -22,7 +21,7 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="Banner">
+      <div className="banner">
         <ItemListContainer products={products} />
       </div>
     </div>

@@ -13,26 +13,28 @@ export const Detail = () => {
     });
   }, [id]);
 
-  if(!Object.keys(movie).length) return
+  if(!Object.keys(movie).length) {return}
 
   return (
       <div className="item">
+        <section>
         <div className="item__img">
           <img src={movie.img} />
         </div>
         <div className="detail__info">
-          <span className="detail__info-title">{movie.title} </span>
-
+          <span className="detail__info-title" ><strong>{movie.title} </strong></span>
           <p className="detail__info-description">{movie.description}</p>
-
           <span className="detail__info-price">$ {(movie.price || 0).toLocaleString("es-MX", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}</span>
-          <span className="detail__info-stock">¡Quedan solo {movie.stock}!</span>
-
+          <div>
+          <span className="detail__info-stock"><strong>¡Quedan solo {movie.stock}!</strong></span>
+          </div>
+            
           {/* <ItemCount stock={movie.stock} onAdd={() => alert("Comprados")} /> */}
         </div>
+        </section>
       </div>
 
   );

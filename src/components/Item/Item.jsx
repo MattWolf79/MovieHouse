@@ -2,9 +2,9 @@ import "./Item.css";
 import { useNavigate } from "react-router-dom";
 
 export const Item = ({
+  id,
   title,
   price,
-  id,
   img,
   category
 }) => {
@@ -21,7 +21,7 @@ export const Item = ({
               <div  className="item-category">{title}</div>   
               <h4 className="item__content-title">Genero: </h4>    
               <div  className="item-category">{category}</div>          
-              <span className="item__content-title">Precio: ${price}</span>    
+              <span className="item__content-title">Precio: ${price},00</span>    
           </div>
       <button className="item-add-button" onClick={()=> addToCart()}> Añadir Carrito</button>  {/*  acá debería agregar al carrito*/}
     </div>

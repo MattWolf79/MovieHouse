@@ -8,7 +8,7 @@ import {  Route, RouterProvider, createBrowserRouter, createRoutesFromElements  
 const routes = createBrowserRouter(
   createRoutesFromElements(
      
-    <Route element={<NavBar />}> {/* ROUTE padre necesita <Outlet /> */}
+    <Route element={<NavBar />}>
       <Route path="/" element={<Home />}/>
       <Route path="/Item/:id" element={<Detail />}/>
       </Route>

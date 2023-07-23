@@ -82,7 +82,7 @@ export const movies = [
     category: "Drama",
     price: 450,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur harum non voluptas eius earum. Reiciendis error a quod impedit ex!",
+      "Un famoso meteorólogo de la televisión se convierte en el enemigo público número uno cuando falla al prevenir una terrible tormenta de granizo. Esto obligará al meteorólogo a huir de la gran capital para encontrar refugio en su ciudad natal, lo que derivará en un viaje de redescubrimiento tan absurdo como humano",
     
     img: "https://cinenacional.com/wp-content/uploads/2021/02/granizo-400x573.jpg",
     stock: 4,
@@ -104,9 +104,9 @@ export const movies = [
     category: "Comedia",
     price: 450,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur harum non voluptas eius earum. Reiciendis error a quod impedit ex!",
+      "Una típica comedia costumbrista en la que abundan las confusiones y situaciones entre parientes que discuten en medio del velorio de Mamá Cora, la abuela que supuestamente se habría suicidado tirándose a las vías de un tren.",
     
-    img: "https://pics.filmaffinity.com/esperando_la_carroza-675954190-large.jpg",
+    img: "https://cinenacional.com/wp-content/uploads/2022/11/0000011827-1.jpg",
     stock: 4,
   },
   {
