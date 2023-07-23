@@ -3,13 +3,32 @@
     width: 67%;
     color: rgb(14, 9, 9);
     border-radius: 4px;
+    box-shadow: 0 0 1rem black;
     background-color: rgb(244, 239, 239);
     margin: 5px;
     border-color: rgb(19, 10, 10);
     padding: 7px;
     display:block ;
+    justify-content: space-between;
     height: fit-content;
 }
+.item_detail{
+    transition: .3s;
+    width: 30%;
+    color: rgb(14, 9, 9);
+    border-radius: 4px;
+    box-shadow: 0 0 2rem black;
+    background-color: rgb(244, 239, 239);
+    margin: 5px;
+    border-color: rgb(19, 10, 10);
+    padding: 15px;
+    display:block ;
+    align-content: center;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
 .item:hover{
     background: #1c1b1b55;
     filter: brightness(1.1);
@@ -30,6 +49,8 @@
     background-color: #e1dddd;
     height: 350px;
     display: flex   ;
+    margin-left: auto;
+    margin-right: auto; 
 }
 .item__content-info{
     margin-top: 12px;
@@ -83,4 +104,13 @@
     text-align: center;
     color: rgb(234, 230, 230);
     font-weight: bold;
+}
+@media screen and (max-width:640px){
+    
+.item__img img{
+    display: none;
+
+}
+
+    
 }

@@ -10,7 +10,8 @@ const routes = createBrowserRouter(
      
     <Route element={<NavBar />}>
       <Route path="/" element={<Home />}/>
-      <Route path="/Item/:id" element={<Detail />}/>
+      <Route path="/Item/:id" element={<Detail />}/>      
+      <Route path="/category/:id" element={<div>categoria</div>}/>
       </Route>
   )
   

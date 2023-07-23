@@ -16,7 +16,8 @@ export const Detail = () => {
   if(!Object.keys(movie).length) {return}
 
   return (
-      <div className="item">
+    <div className="banner">
+      <div className="item_detail">
         <section>
         <div className="item__img">
           <img src={movie.img} />
@@ -36,6 +37,6 @@ export const Detail = () => {
         </div>
         </section>
       </div>
-
+      </div>
   );
 };

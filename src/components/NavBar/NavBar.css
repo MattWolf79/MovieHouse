@@ -100,6 +100,11 @@
     display: none;
     background-color:rgb(255, 255, 255);
   }
+  .NavBarLogo{
+    display: flex;
+    align-content: center;
+    
+  }
   .NavBar{
     width: 100%;
     display: flex;
