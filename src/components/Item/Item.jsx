@@ -6,7 +6,8 @@ export const Item = ({
   title,
   price,
   img,
-  category
+  category,
+  stock
 }) => {
   const navigate = useNavigate();
   return (
@@ -21,7 +22,8 @@ export const Item = ({
               <div  className="item-category">{title}</div>   
               <h4 className="item__content-title">Genero: </h4>    
               <div  className="item-category">{category}</div>          
-              <span className="item__content-title">Precio: ${price},00</span>    
+              <div className="item__content-title">Precio: ${price},00</div>
+              <div className="item__content-title">Stock:{stock}</div>        
           </div>
       <button className="item-add-button" onClick={()=> addToCart()}> Añadir Carrito</button>  {/*  acá debería agregar al carrito*/}
     </div>

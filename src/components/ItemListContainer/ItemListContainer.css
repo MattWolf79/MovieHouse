@@ -6,7 +6,7 @@
     height: 1200px;
     width: auto;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
     color: rgb(241, 233, 233);
     margin:20px;
     cursor: pointer;

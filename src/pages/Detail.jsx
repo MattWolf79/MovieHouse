@@ -30,6 +30,7 @@ export const Detail = () => {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}</span>
+               
           <div>
           <span className="detail__info-stock"><strong>¡Quedan solo {movie.stock}!</strong></span>
           </div>

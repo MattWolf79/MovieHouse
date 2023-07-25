@@ -72,9 +72,9 @@
   font-size: 17px;
   display: flex;
   cursor: pointer;
-  align-content: center;
-  height: 45px;
-  width: 250px;
+  align-content: center; 
+  height: 34px;
+  width: 174px;
 }
 .item-box {
   background-color: #9c1616;
@@ -126,8 +126,8 @@
     font-size: 17px;
     align-content: center;
     cursor: pointer;
-    height: 45px;
-    width: 250px;
+    height: 34px;
+    width: 174px;
   }
   .item-box {
     background-color: #9c1616;

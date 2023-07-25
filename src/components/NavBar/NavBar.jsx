@@ -75,7 +75,7 @@ const NavBar = () => {
                     <NavLink to={"/category/accion"}>Accion</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/category/accion"}>Drama</NavLink>
+                    <NavLink to={"/category/drama"}>Drama</NavLink>
                   </li>
                 </ul>
               </div>
