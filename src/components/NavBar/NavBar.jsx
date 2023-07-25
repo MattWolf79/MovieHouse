@@ -69,13 +69,28 @@ const NavBar = () => {
                     <NavLink to={"/category/terror"}>Terror</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/category/aventura"}>Aventura</NavLink>
+                    <NavLink to={"/category/aventura"}>Aventuras</NavLink>
                   </li>
                   <li>
                     <NavLink to={"/category/accion"}>Accion</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/category/drama"}>Drama</NavLink>
+                    <NavLink to={"/category/drama"}>Dramas</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/fantasia"}>Fantasias</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/animada"}>Animadas</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/comedia"}>Comedias</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/novela"}>Novelas</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category/policial"}>Policiales</NavLink>
                   </li>
                 </ul>
               </div>
