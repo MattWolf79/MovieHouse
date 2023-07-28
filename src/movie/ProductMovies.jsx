@@ -174,6 +174,15 @@ export const getMovies = (id) =>{
     })
 }
 
+export const searchMovie = (title) =>{    
+  const movie = movies.filter((movie) => movie.title.toLowerCase().startsWith(title) );
+  return new Promise((res) => {
+  
+      res(movie);
+     
+  });
+}
+
 export const getMovie = (id) => {
   const movie = movies.filter((movie) => movie.id === id)[0];
 

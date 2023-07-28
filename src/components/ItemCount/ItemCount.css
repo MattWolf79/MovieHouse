@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 8px;
     max-width: max-content;
+    margin:auto;
     align-items: center;
 }
 .item-count__buttons{
@@ -24,7 +25,7 @@
     width: 25px;
 }
 .item-count__add{
-    padding: 8px 16px;
+    padding: 10px 12px;
     background: #646cff;
     max-width: 300px;
     border-radius: 8px;

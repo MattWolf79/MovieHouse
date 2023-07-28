@@ -1,14 +1,17 @@
-import { useState } from "react";
+
 import "./Carrito.css";
+import { useCartContext } from "../../State/Cart.context";
+import { useNavigate } from "react-router-dom";
 
-const Carrito = () => {
-  const [active, setActive] = useState(false);
+export const Carrito = () => {
+  const { getCartCant } = useCartContext();
+  const navigate = useNavigate();
   return (
-    // <div className={`container-cart-products hidden-cart ${active ? '' : 'hidden-cart'}`}
-    <div className="Carrito" onClick={()=> setActive(!active)}>
-      <i className="bi bi-minecart"></i>
-    </div>
-  )
-}
+    <div className="cart-widget" onClick={() => navigate("/cart")}>
+       <span className="bi bi-cart-check">({getCartCant()})</span>
 
-export default Carrito
+           
+
+    </div>
+  );
+};

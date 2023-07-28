@@ -1,9 +1,12 @@
 // import Banner from './components/Banner/Banner';
 // import { Item } from "./components/Item/Item.jsx";
+import { ThemeProvider } from "./State/Theme.context.jsx";
+import { CartProvider } from "./State/Cart.context.jsx";
 import  NavBar from "./components/NavBar/NavBar.jsx";
 import { Category } from "./pages/Category";
 import {Detail } from "./pages/Detail";
 import {Home} from "./pages/Home";
+import { Cart } from "./pages/Cart";
 import {  Route, RouterProvider, createBrowserRouter, createRoutesFromElements  } from 'react-router-dom';
 
 const routes = createBrowserRouter(
@@ -13,6 +16,7 @@ const routes = createBrowserRouter(
       <Route path="/" element={<Home />}/>
       <Route path="/Item/:id" element={<Detail />}/>      
       <Route path="/category/:id" element={<Category />}/>  
+      <Route path="/cart" element={<Cart />} />
       </Route>
   )
   
@@ -21,8 +25,9 @@ const routes = createBrowserRouter(
 function App() {  
   return (   
       <div className="App">
-       
-    <RouterProvider router={routes}/>
+        <CartProvider>
+            <RouterProvider router={routes}/>
+        </CartProvider>
     </div>
 
   )

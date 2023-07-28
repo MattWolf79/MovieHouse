@@ -23,11 +23,12 @@ export const Item = ({
               <h4 className="item__content-title">Genero: </h4>    
               <div  className="item-category">{category}</div>          
               <div className="item__content-title">Precio: ${price},00</div>
-              <div className="item__content-title">Stock:{stock}</div>        
+              <span className="item__content-title">Stock:{stock}</span>
+                      
           </div>
-      <button className="item-add-button" onClick={()=> addToCart()}> Añadir Carrito</button>  {/*  acá debería agregar al carrito*/}
-    </div>
-    </div>
+          </div>     
+     
+    </div>  
   )
 }
 

@@ -1,15 +1,50 @@
 import "./NavBar.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import Carrito from "../Carrito/Carrito";
-// captura el state para, en un futuro, hacer que las opciones de menú estén dentro del botón
+import {Carrito} from "../Carrito/Carrito";
+import { useParams } from "react-router-dom";
+import { getMovie } from "../../movie/ProductMovies";
+import { SearchMovie } from "../SearchComponent/SearchMovie";
+
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
+  // const [busqueda,setBusqueda] = useState("");
+  // const [movie,setMovie] = useState([]);
+  // const {id} = useParams();
 
   const toggleMenu = () => {
     setMenu(!menu);
   };
+
+  // const searcher=e=>{
+  //   setBusqueda(e.target.value);
+  //   console.log(e.target.value);
+  //   // filtrar(e.target.value);
+  // }
+
+  // const filtrar=(terminoBusqueda)=>{
+  //   let resultado=[];
+  //   var resultadoBusqueda=movie.filter((elemento)=>{
+  //     if(elemento.title.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+  //       return elemento; 
+  //     }
+  //   });
+  //   setMovie(resultadoBusqueda);
+  // }
+
+  // useEffect(() => {
+  //   getMovie(+id).then((res) => {
+  //     setMovie(res); 
+  //   });
+  // }, [id]);
+
+
+
+
   return (
+
+
+
     <div>
       <nav className="NavBar">
         <NavLink to="/">
@@ -17,24 +52,11 @@ const NavBar = () => {
         </NavLink>
         {/*  <--! buscador de videos--!> */}
         <div>
-          <div>
-          <input
-              className="NavBar-text"
-              type="search"
-              placeholder="Busca tu pelicula aquí"
-              aria-label="Search"
-            />
-            <button
-              type="button"
-              className="btn btn-secondary btn-lg"
-              width="16px"
-              height="16px"
-            >
-              Buscar
-            </button>
-            
-          </div>
+          
         </div>
+        <div>
+          <SearchMovie/>
+        </div>  
         {/* botón para el menú, que debería contenet los li  */}
         <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
           <button onClick={toggleMenu} className="Cabecera-button">
@@ -54,16 +76,16 @@ const NavBar = () => {
               <nav className="NavBar-li">Inicio</nav>
             </NavLink>
 
-            <div className="container">
+            <div className="NavBar-ul">
               <div className="dropdown" color="green">
-                <button
+                <li
                   className="btn btn-default dropdown-toggle btn-lg"
                   type="button"
                   data-toggle="dropdown"
                 >
                   Genero
                   <span className="caret"></span>
-                </button>
+                </li>
                 <ul className="dropdown-menu">
                   <li>
                     <NavLink to={"/category/terror"}>Terror</NavLink>
@@ -92,22 +114,27 @@ const NavBar = () => {
                   <li>
                     <NavLink to={"/category/policial"}>Policiales</NavLink>
                   </li>
+                 
                 </ul>
+                
               </div>
             </div>
             
+            
           </nav>
           
+          
         </nav>
-        <nav className="NavBar-li">
-          <a href="#">Ayuda</a>
-        </nav>
+        <div>   
+                <nav className="NavBar-li"><a href="#">Ayuda</a></nav>
+                
+                </div>
 
         
         <div className="Carrito">
           <a href="#"></a> <Carrito />{" "}
         </div>
-        <button className="btn btn-secondary btn-lg">
+        <button className="btn btn-secondary btn-lg-hamburg">
           <svg
             className="NavBar-svg"
             xmlns="http://www.w3.org/2000/svg"

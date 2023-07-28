@@ -2,7 +2,7 @@
     background-size: cover;
     /* background-position: cover; */
     background-repeat: repeat-y;
-    font-size: 25px;
+    font-size: 15px;
     object-fit: cover;
     height: 1800px;
     width: auto;
@@ -68,14 +68,17 @@
   border-radius: 5px;
   text-align: center;
   color: #0e0505;
+  text-transform: uppercase ;
   border: grove;
-  font-size: 17px;
+  font-size: 10px;
   display: flex;
   cursor: pointer;
   align-content: center; 
   height: 34px;
-  width: 174px;
+  width: 70px;
+  margin: auto;
 }
+
 .item-box {
   background-color: #9c1616;
   margin: 10px;
@@ -120,14 +123,14 @@
     background-color: #5cb85c;
     border-radius: 5px;
     color: #fff;
-    margin: 0;
+    margin: auto;
     border: none;
     display: grid;
-    font-size: 17px;
+    font-size: 10px;
     align-content: center;
     cursor: pointer;
     height: 34px;
-    width: 174px;
+    width: 70px;
   }
   .item-box {
     background-color: #9c1616;
