@@ -171,6 +171,8 @@ header {
 .cart-empty {
 	padding: 20px;
 	text-align: center;
+	color: blue;
+	font-size: 20px;
 }
 
 .hidden {
@@ -393,6 +395,9 @@ header {
 .cart-empty {
 	padding: 20px;
 	text-align: center;
+	color: blue;
+	font-size: 20px;
+	
 }
 
 .hidden {

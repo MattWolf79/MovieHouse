@@ -39,16 +39,17 @@ export const SearchMovie = () => {
   }, [busqueda]);
 
   return (
-    <div className="input-wrapper">
+    <div className="input-wrapper" display="none" >
       <form className="form-input" onSubmit={setMovie}>
-        <FaSearch id="search-icon" />
+        
         <input
+        
           className="input-icon"
           type="text"
-          placeholder="Busca Aquí tu película"
+          placeholder="Busca Aquí tu película"          
           onChange={handleChange}
         />
-        <button type="submit">Buscar</button>
+        <FaSearch id="search-icon" />
       </form>
     </div>
   );

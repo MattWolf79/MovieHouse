@@ -1,6 +1,3 @@
-// import Banner from './components/Banner/Banner';
-// import { Item } from "./components/Item/Item.jsx";
-import { ThemeProvider } from "./State/Theme.context.jsx";
 import { CartProvider } from "./State/Cart.context.jsx";
 import  NavBar from "./components/NavBar/NavBar.jsx";
 import { Category } from "./pages/Category";
