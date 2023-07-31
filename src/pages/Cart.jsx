@@ -3,14 +3,15 @@ import { useCartContext } from "../State/Cart.context";
 // import { Item } from "../components/Item/Item";
 
 export const Cart = () => {
-  const { cart, limpiarCart, getTotalPrice, borrarCart, getCartCant } =
+  const { cart, limpiarCart, getTotalPrice, borrarCart } =
     useCartContext();
   const [active, setActive] = useState(false);
   useEffect(() => {
     console.log({ cart });
   }, [cart]);
-
   return (
+
+
     <div className="container-icon">
       
       <div>
@@ -29,7 +30,7 @@ export const Cart = () => {
                 <div className="cart-product" key={Item.id}>
                   
                   <h2  className="item__img_cart">
-                  <img src={Item.img} />
+                  <img src={Item.img}   />
                   </h2>
                     <h2 className="titulo-producto-carrito">{Item.title}</h2>
                     <h3 className="precio-producto-carrito">${Item.price}</h3>

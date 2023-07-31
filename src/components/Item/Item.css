@@ -12,6 +12,14 @@
     justify-content: space-between;
     height: fit-content;
 }
+.img{
+    object-fit: cover;
+    height: 100px;
+}
+.img :hover{
+    object-fit: cover;
+    height: 100px;
+}
 .item_detail{
     transition: .3s;
     width: 30%;
@@ -52,6 +60,7 @@
     max-height: 20%;
     border-radius: 4px;
     overflow: hidden;
+    object-fit: cover;
 }
 .item__img img{
     object-fit: cover;
