@@ -42,7 +42,7 @@ export const Cart = () => {
             <div className="cart-total" style={{
                         background: "orange"
                       }} >
-              <h3>Total a pagar: ${" "} {getTotalPrice().toLocaleString("es-CO", {
+              <h3>Total a pagar: ${" "} {getTotalPrice.toLocaleString("es-CO", {
                   maximumFractionDigits: 2,
                   minimumFractionDigits: 2,
                 })}</h3>
@@ -55,7 +55,6 @@ export const Cart = () => {
           </>
         ) : (
           <div className="banner">
-          {/* <h2>CARRITO</h2> */}
           <p className='banner-container' style={{background:"grey", width:"auto"}} >El carrito está vacío</p>
           </div>
        

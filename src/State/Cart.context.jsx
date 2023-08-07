@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from 'react';
+import {createContext, useContext, useState,useMemo} from 'react';
 
 
 const CartContext   = createContext([]);
@@ -9,8 +9,10 @@ export const useCartContext=()=>useContext(CartContext);
 export const CartProvider =({children})=>{
     const [cart,setCart] = useState([]);
 
+    const itemInCart = (id) => cart.find((product) => product.id === id);
+
     const addProduct=(item,cantidad) =>{
-        const element = cart.find((product) => product.id===item.id);
+        const element = itemInCart(item.id);
         if(!element)
         return setCart([...cart,{...item,cantidad,},]);
     const newCart = cart.map((product) => {
@@ -25,13 +27,13 @@ export const CartProvider =({children})=>{
 const borrarCart = (id) => {
     const newCart = cart.filter((product)=> product.id !==id)
     setCart(newCart);
-}
+};
 
 const limpiarCart = () => setCart([]);
 
-const getCartCant = () => cart.reduce((acc,item)=>acc + item.cantidad,0);
+const getCartCant = useMemo(() => cart.reduce((acc,item)=>acc + item.cantidad,0),[cart]);
 
-const getTotalPrice = ()=> cart.reduce((acc,item)=> acc + item.price * item.cantidad,0); 
+const getTotalPrice = useMemo(() => cart.reduce((acc,item)=> acc + item.price * item.cantidad,0),[cart]); 
 
 const value={
     cart,
@@ -40,6 +42,7 @@ const value={
     borrarCart,
     limpiarCart,
     getTotalPrice,
+    itemInCart
 }
 
     return(

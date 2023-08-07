@@ -8,7 +8,7 @@ export const Carrito = () => {
   const navigate = useNavigate();
   return (
     <div className="cart-widget" onClick={() => navigate("/cart")}>
-       {getCartCant() ? <span className="bi bi-cart-check">({getCartCant()})</span> : null }
+       {getCartCant ? <span className="bi bi-cart-check">({getCartCant})</span> : null }
 
            
 
