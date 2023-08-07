@@ -34,12 +34,15 @@ export const SearchMovie = () => {
   useEffect(() => {
     searchMovie(busqueda.toLowerCase()).then((res) => {
       setMovie(res);
-      console.log(res);
     });
   }, [busqueda]);
 
   return (
-    <div className="input-wrapper" display="none" >
+    <div className="input-wrapper" display="none" style={{
+      padding: "10px",
+      alignItems:"end",
+      margin: "10px 0",
+    }}>
       <form className="form-input" onSubmit={setMovie}>
         
         <input

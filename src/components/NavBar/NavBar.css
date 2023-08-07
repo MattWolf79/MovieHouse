@@ -67,7 +67,7 @@
   background-size: cover;  
   background-position: center;
   align-items: center;
-  color:rgb(27, 3, 71)
+  color:rgb(52, 6, 137)
   /* justify-content: space-between; */
 };
 .dropdown-item_menu{  
@@ -77,21 +77,23 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  position:inherit;
   align-items: center;
 }
 .dropdown{
-   color: "#000aff";
+   color: "#3d236c";
    width: 0em;
 }   
 .btn btn-default dropdown-toggle{
   font-size: 50px;
-  color:rgb(12, 3, 61);
+  display: flex;
+  color:rgb(195, 195, 198);
 }
 .btn-lg{
   font-size: 2em;
-  color:#646cff;
-  border-bottom: 1px;
-  display: inline-flex;
+  color:white;
+  border-bottom: 3px;
+  display: inline-block;
 }
 
 .btn-lg-hamburg{
@@ -116,9 +118,6 @@
   position:inherit;
   color: rgb(163, 154, 154);
   object-fit: center;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
-  url("../../img/logoCata.png");   */
-
   
 }
 @media screen and (max-width:640px) {
@@ -160,8 +159,9 @@
     font-size: 2em;
     color:#646cff;
     border-bottom: 1px;
+    align-content: flex-end;
     display: flex;
-    position: relative;
+    position: absolute;
     justify-content: end;
   }
 }
@@ -169,6 +169,7 @@
   margin: 0 .5em;
   display: flex;
   font-size: 20px;
+  flex-direction: column;
 }
 .Cabecera{
   width:100%;
@@ -204,6 +205,8 @@
       justify-content: center;
       align-items: center;
       height:0vh;
+      top:0;
+      right: 0;
       opacity: 0;
       overflow: hidden;
       transition: all .5s ease;

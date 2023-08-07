@@ -2,8 +2,7 @@
     background-size: cover;
     background-position: center;
     font-size: 25px;
-    object-fit: cover;
-    height: 900px;
+    height: auto;
     width: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
@@ -14,8 +13,9 @@
   }
   @media screen and (max-width:640px){
     .ItemListContainer{
-      display: flex;
+      display: grid;
       overflow: scroll;
+      grid-template-columns: repeat(1,minmax(190px,1fr));
     }
     
   }

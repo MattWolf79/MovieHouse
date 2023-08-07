@@ -9,20 +9,17 @@ export const Category = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         setProducts([]);
-        getMovies(id) 
-      .then(res => {
+        getMovies(id).then(res => {
         setIsLoading(false); 
-        setProducts(res)} 
-        
-        ) 
+        setProducts(res)
+      }); 
     }, [id]);
   
   
     return (
       <div>
         <div className="banner">
-          <h5>{isLoading ? "Cargando ..." : ""}</h5>
-          <ItemListContainer products={products} />
+          <ItemListContainer products={products} loading={isLoading} />
         </div>
       </div>
     );

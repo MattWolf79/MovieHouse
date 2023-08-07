@@ -1,10 +1,9 @@
 import "./NavBar.css";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import {Carrito} from "../Carrito/Carrito";
-import { useParams } from "react-router-dom";
-import { getMovie } from "../../movie/ProductMovies";
 import { SearchMovie } from "../SearchComponent/SearchMovie";
+import logo from "../../img/logoCata.png";
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
@@ -46,14 +45,10 @@ const NavBar = () => {
 
 
     <div>
-      <nav className="NavBar">
+      <nav className="NavBar" >
         <NavLink to="/">
-          <img className="NavBarLogo" src={"../src/img/logoCata.png"} />
+          <img className="NavBarLogo" src={logo} />
         </NavLink>
-        {/*  <--! buscador de videos--!> */}
-        <div>
-          
-        </div>
         <div>
           <SearchMovie/>
         </div>  
@@ -75,7 +70,7 @@ const NavBar = () => {
             <NavLink to="/">
               <nav className="NavBar-li">Inicio</nav>
             </NavLink>
-
+            <nav className="NavBar-li"><a href="#">Ayuda</a></nav>
             <div className="NavBar-ul">
               <div className="dropdown" color="green">
                 <li
@@ -118,19 +113,9 @@ const NavBar = () => {
                 </ul>
                 
               </div>
-            </div>
-            
-            
+            </div>            
           </nav>
-          
-          
         </nav>
-        <div>   
-                <nav className="NavBar-li"><a href="#">Ayuda</a></nav>
-                
-                </div>
-
-        
         <div className="Carrito">
           <a href="#"></a> <Carrito />{" "}
         </div>

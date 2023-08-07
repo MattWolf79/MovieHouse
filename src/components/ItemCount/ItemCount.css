@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-content: first baseline;
     max-width: max-content;
     margin:auto;
     align-items: center;
@@ -13,10 +14,11 @@
 }
 
 .item-count__buttons button{
-    background: #737373;
+    background: #706e6e;
     padding: 8px;
     font-size: 16px;
-    width: 40px;
+    color: aliceblue;
+    width: auto;
     height: 40px;
     border-radius: 8px;
 }
@@ -34,6 +36,7 @@
 .item-count__add:disabled{
     padding: 8px 16px;
     background: #494b63;
+    height: 50px;
     max-width: 300px;
     border-radius: 8px;
     color: white;

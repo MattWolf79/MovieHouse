@@ -1,79 +1,66 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+// import "./Cart.css";
 import { useCartContext } from "../State/Cart.context";
-// import { Item } from "../components/Item/Item";
+import { NavLink } from "react-router-dom";
+
 
 export const Cart = () => {
   const { cart, limpiarCart, getTotalPrice, borrarCart } =
     useCartContext();
   const [active, setActive] = useState(false);
-  useEffect(() => {
-    console.log({ cart });
-  }, [cart]);
+ 
   return (
 
-
-    <div className="container-icon">
       
-      <div>
-            <button className="btn-clear-all" onClick={limpiarCart}>
-              Vaciar Carrito
-            </button>
-      </div>     
+      <div className="container-icon" >  
       <div className="container-cart-icon" onClick={() => setActive(!active)}>
       </div> 
-      <div className={`container-cart-products ${active ? "" : "hidden-cart"}`}>
         {cart.length ? (
-          <>
-            <div className="row-product">
-              {cart.map((Item) => (                
-                
-                <div className="cart-product" key={Item.id}>
-                  
-                  <h2  className="item__img_cart">
-                  <img src={Item.img}   />
-                  </h2>
+          <>  
+              {cart.map((Item) => (        
+                <ul className="cart-product" key={Item.id}  style={{background: '#eae4e4'}} >
+                  <img src={Item.img} className="item__img_cart"   />
                     <h2 className="titulo-producto-carrito">{Item.title}</h2>
-                    <h3 className="precio-producto-carrito">${Item.price}</h3>
+                    <h3 className="precio-producto-carrito">${Item.price}</h3>   
+                    <h4 className="count-products"> Cantidad
+                    <span style={{padding: "10px",margin: "10px 0" }}>{Item.cantidad}</span>
+                    </h4>
                     
-                  
-                  <div className="count-products"> Cantidad
-                    <span style={{
-                        padding: "10px",  
-                        background: "white",
-                        margin: "10px 0", 
-                      }}>{Item.cantidad}</span>
-                  </div>
-                  <button
+                  <button className="bi bi-trash3"
                       style={{
-                        padding: "10px",  
-                        background: "grey",
+                        padding: "10px",
+                        background: "orange",
                         margin: "10px 0",
                       }}
                       key={Item.id}
                       onClick={() => borrarCart(Item.id)}
-                  > Quitar del carrito
+                  alt="Quitar del carrito"> 
                   </button>
-                </div>
+                </ul>
               ))}
-            </div>
 
-            <div className="cart-total">
-              <h3>Total:</h3>
-              <span className="total-pagar">
-                ${" "}
-                {getTotalPrice().toLocaleString("es-CO", {
+            <div className="cart-total" style={{
+                        background: "orange"
+                      }} >
+              <h3>Total a pagar: ${" "} {getTotalPrice().toLocaleString("es-CO", {
                   maximumFractionDigits: 2,
                   minimumFractionDigits: 2,
-                })}
-              </span>
-            </div>
-
-           
+                })}</h3>
+      <button className="btn-clear-all"  onClick={limpiarCart} >Vaciar Carrito</button>  
+      <NavLink to="/compra">    
+      <button >Comprar ahora</button>
+      </NavLink>
+    
+            </div>          
           </>
         ) : (
-          <p className="cart-empty">El carrito está vacío</p>
+          <div className="banner">
+          {/* <h2>CARRITO</h2> */}
+          <p className='banner-container' style={{background:"grey", width:"auto"}} >El carrito está vacío</p>
+          </div>
+       
         )}
-      </div>
+      
     </div>
   );
 };

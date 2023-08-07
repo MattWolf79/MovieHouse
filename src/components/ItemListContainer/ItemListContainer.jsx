@@ -1,15 +1,33 @@
+
 import {Item} from "../Item/Item";
 import "./ItemListContainer.css";
 
 
-export const ItemListContainer = ({ products  }) => {
+// eslint-disable-next-line react/prop-types
+export const ItemListContainer = ({ products, loading = false   }) => {
+  
   
   return (
   <div className="ItemListContainer">
-    {products.map ((product) => {
-      return <Item key={product.id} {...product}
+     {loading ? (
+      <>
+        <div className="skeleton">
+          <div className="skeleton__img"></div>
+        </div>
+        <div className="skeleton">
+          <div className="skeleton__img"></div>
+        </div>
+        <div className="skeleton">
+          <div className="skeleton__img"></div>
+        </div>{" "}
+      </>
+    ) : (
+    // eslint-disable-next-line react/prop-types
+    products.map ((product) => (
+       <Item key={product.id} {...product}
       />
-      })}
+      ))
+    )}
   </div>
-  );
-};
+);
+    };

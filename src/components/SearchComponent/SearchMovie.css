@@ -3,3 +3,11 @@
     width: 20PX;
     height: 15px;
 }
+@media screen and (max-width:640px) {
+    #search-icon{
+        display: none;
+    }
+    .input-icon{
+        display: none;
+    }
+}
