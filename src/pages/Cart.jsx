@@ -4,6 +4,7 @@ import { addOrder } from "../movie/order.request";
 import { updateManyMovies } from "../movie/ProductMovies";
 import { Loader } from "../components/Loader/Loader";
 import "../js/formulario.css";
+// import {FaCheckCicleFill} from "react-icons/fa";
 
 const inputs = document.querySelectorAll("#formulario input");
 
@@ -62,6 +63,7 @@ export const Cart = () => {
   const [form, setForm] = useState(initialForm);
   const [errors, setError] = useState({});
   const [loading, setLoading] = useState(false);
+  const [botonActivo,setBotonActivo] = useState(false);
 
   // useState para la orden
   const [nombre, setNombre] = useState("");
@@ -91,18 +93,18 @@ export const Cart = () => {
     limpiarCart();
   };
 
+  
   const handleChange = ({ target: { value, name } }) => {
-
     setForm({
       ...form,
       [name]: value,
     });
+    setError(validarFormulario(initialForm, form));
   };
 
   const handleBlur = (e) => {
     e.preventDefault();
     handleChange(e);
-    setError(validarFormulario(initialForm, form));
   };
 
   return (
@@ -175,12 +177,13 @@ export const Cart = () => {
                   onBlur={handleBlur}
                   required
                 />
-                <i className="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
+
               <div className="">
                 <p className="formulario__input-error" style={styles}>
                   {errors.nombre}
                 </p>
+                {/* <i className="bi bi-check-circle-fill" /> */}
               </div>
             </div>
             <div className="formulario__grupo" id="grupo__telefono">
@@ -215,7 +218,7 @@ export const Cart = () => {
                   onBlur={handleBlur}
                   required
                 />
-                <i className="formulario__validacion-estado fas fa-times-circle"></i>
+                <i className="formulario__input-error"></i>
               </div>
               <p className="formulario__input-error" style={styles}>
                 {errors.email}
@@ -234,7 +237,7 @@ export const Cart = () => {
                   onChange={(e) => setEmail2(e.target.value)}
                   onBlur={handleBlur}
                 />
-                <i className="formulario__validacion-estado fas fa-times-circle"></i>
+                <i className="formulario__input-error"></i>
               </div>
               <div>
                 <p className="formulario__input-error" style={styles}>
@@ -251,7 +254,6 @@ export const Cart = () => {
                 className="formulario__btn"
                 onClick={createOrder}
               >
-                
                 Confirmar Compra
               </button>
 
@@ -259,19 +261,14 @@ export const Cart = () => {
                 className="formulario__mensaje-exito"
                 id="formulario__mensaje-exito"
               >
-               
-               {setLoading && <Loader />}
+                {setLoading && <Loader />}
               </p>
             </div>
-            
           </div>
         </>
       ) : (
         <div className="banner">
-          <p
-            className="banner-container"
-            style={{ background: "grey"}}
-          >
+          <p className="banner-container" style={{ background: "grey" }}>
             El carrito está vacío
           </p>
         </div>
