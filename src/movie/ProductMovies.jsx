@@ -1,12 +1,16 @@
 import {
   collection,
   getDocs,
-  doc,
   getDoc,
-  query,
+  doc,
   where,
+  query,
+  updateDoc,
+  deleteDoc,
+  writeBatch,
+  increment,
 } from "firebase/firestore";
-import { db } from "../Firebase/config";
+import { db } from "./config";
 
 const movieRef = collection(db, "products");
 
@@ -24,19 +28,8 @@ export const getMovies = async (category) => {
   return movies;
 };
 
-// export const getMovies = () =>{
-//   // const _movies = id
-//   // ? movies.filter((movie) => movie.category.toLowerCase() === id)
-//   //   : movies;
-//   //   return new Promise((res)=>{
-//   //       setTimeout(()=>{
-//   //           res(_movies)
-//   //       },1000)
-//   //   })
-// }
 
 export const searchMovie = () => {
-  // const movie = movies.filter((movie) => movie.title.toLowerCase().includes(title) );
   return new Promise((res) => {
     res([]);
   });
@@ -48,5 +41,22 @@ export const getMovie = async (id) => {
   if (docSnap.exists()) return { id: docSnap.id, ...docSnap.data() };
   return null;
 };
+export const updateMovie = async (id, item) => {
+  const newMovie = await updateDoc(doc(db, "products", id), item);
+  return newMovie;
+};
+export const deleteMovie = async (id) => {
+  return await deleteDoc(doc(db, "products", id));
+};
 
+export const updateManyMovies = async ( items ) => {
+  const batch = writeBatch(db);
+  
+  items.forEach(({id, cantidad})=>{ 
+    console.log (cantidad);
+    batch.update(doc(db, "products", id), {stock: increment(-cantidad)})
+  })
+
+  batch.commit();
+}
 

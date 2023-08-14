@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useCallback } from "react";
 import { ItemCount } from "../components/ItemCount/ItemCount";
 import { getMovie } from "../movie/ProductMovies.jsx";
 import { useParams, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ export const Detail = () => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const { addProduct } = useCartContext();
+  const { addProduct, itemInCart  } = useCartContext();
 
   useEffect(() => {
     getMovie(id).then((res) => {
@@ -21,9 +21,11 @@ export const Detail = () => {
     });
   }, [id, navigate]);
 
-  const handleAdd = (cantidad) => {
+  const handleAdd = useCallback((cantidad) => {
     addProduct(movie, cantidad);
-  };
+  },
+  [addProduct, movie]
+  );
 
   if (!Object.keys(movie).length) return;
 
@@ -36,12 +38,12 @@ export const Detail = () => {
       <div className="item_detail">
         <section>
           <div className="item__img" style={{
-                        background: "hsl(261, 29%, 52%);"
+                        background: "hsl(261, 29%, 52%)"
                       }}>
             <img src={movie.img} />
           </div>
           <div className="detail__info" style={{
-                        background: "hsl(261, 29%, 52%);"
+                        background: "hsl(261, 29%, 52%)"
                       }}>
             <span className="detail__info-title">
               <strong>{movie.title} </strong>
@@ -55,7 +57,10 @@ export const Detail = () => {
               })}
             </span>
 
-            <ItemCount stock={movie.stock} onAdd={handleAdd} />
+            <ItemCount 
+            stock={movie.stock - (itemInCart?.(id)?.cantidad || 0)} 
+            onAdd={handleAdd}
+            />
 
             <div>
               <span className="detail__info-stock">

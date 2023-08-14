@@ -7,35 +7,10 @@ import logo from "../../img/logoCata.png";
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
-  // const [busqueda,setBusqueda] = useState("");
-  // const [movie,setMovie] = useState([]);
-  // const {id} = useParams();
 
   const toggleMenu = () => {
     setMenu(!menu);
   };
-
-  // const searcher=e=>{
-  //   setBusqueda(e.target.value);
-  //   console.log(e.target.value);
-  //   // filtrar(e.target.value);
-  // }
-
-  // const filtrar=(terminoBusqueda)=>{
-  //   let resultado=[];
-  //   var resultadoBusqueda=movie.filter((elemento)=>{
-  //     if(elemento.title.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
-  //       return elemento; 
-  //     }
-  //   });
-  //   setMovie(resultadoBusqueda);
-  // }
-
-  // useEffect(() => {
-  //   getMovie(+id).then((res) => {
-  //     setMovie(res); 
-  //   });
-  // }, [id]);
 
 
 
