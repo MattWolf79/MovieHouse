@@ -11,7 +11,7 @@ de que necesites pasar esos días donde queres descansar y disfrutar, cuantas ve
 5. [FAQs](#faqs)
 ### Info General
 ***
-Está desarrollada integramente en React, donde se integró al desarrollo NodeJS para la ejecución de paquetes por línea de comando.
+Está desarrollada integramente en React, donde se utilizó en el desarrollo NodeJS para la ejecución de paquetes por línea de comando.
 React soportado por Vite, cuenta con las actualizaciones requeridas en el desarrollo de paginas, para hacer que lo empleado en el desarrollo, sea lo último disponible.
 
 ### Screenshot
