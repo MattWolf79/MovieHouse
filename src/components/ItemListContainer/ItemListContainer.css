@@ -2,7 +2,7 @@
     background-size: cover;
     background-position: center;
     font-size: 25px;
-    height: auto;
+    height: 600px;
     width: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
