@@ -28,7 +28,6 @@ export const getMovies = async (category) => {
   return movies;
 };
 
-
 export const searchMovie = () => {
   return new Promise((res) => {
     res([]);
@@ -36,7 +35,7 @@ export const searchMovie = () => {
 };
 
 export const getMovie = async (id) => {
-  const document = doc(db, 'products', id);
+  const document = doc(db, "products", id);
   const docSnap = await getDoc(document);
   if (docSnap.exists()) return { id: docSnap.id, ...docSnap.data() };
   return null;
@@ -49,14 +48,12 @@ export const deleteMovie = async (id) => {
   return await deleteDoc(doc(db, "products", id));
 };
 
-export const updateManyMovies = async ( items ) => {
+export const updateManyMovies = async (items) => {
   const batch = writeBatch(db);
-  
-  items.forEach(({id, cantidad})=>{ 
-    
-    batch.update(doc(db, "products", id), {stock: increment(-cantidad)})
-  })
+
+  items.forEach(({ id, cantidad }) => {
+    batch.update(doc(db, "products", id), { stock: increment(-cantidad) });
+  });
 
   batch.commit();
-}
-
+};

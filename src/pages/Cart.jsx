@@ -14,13 +14,11 @@ const initialForm = {
   telefono: "",
 };
 
-
-
 let styles = {
   fontWeigth: "bold",
   color: "#dc3545",
 };
-
+// funcion para validar los datos ingresados en el formulario de confirmacion de compra
 const validarFormulario = (initialForm, form) => {
   let ExpreNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
   let ExpreEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -33,32 +31,33 @@ const validarFormulario = (initialForm, form) => {
   });
 
   if (!form.nombre.trim()) {
-    errors.nombre = "El valor es requerido";
+    errors.nombre = "El Nombre es requerido";
   } else if (!ExpreNombre.test(form.nombre.trim())) {
     errors.nombre = "El campo nombre solo acepta letras y espacios en blanco";
   }
 
   if (!form.email.trim()) {
-    errors.email = "El valor es requerido";
+    errors.email = "El Email es requerido";
   } else if (!ExpreEmail.test(form.email.trim())) {
     errors.email = "El formato de correo no es válido";
   }
 
   if (!form.telefono.trim()) {
-    errors.telefono = "El valor es requerido";
+    errors.telefono = "El Telefono es requerido";
   } else if (!ExpreTelefono.test(form.telefono.trim())) {
     errors.telefono =
       "El telefono solo puede contener numeros y el maximo son 10 dígitos.";
   }
-
+  // Los datos de Email deben coincidir 
   if (form.email.trim() != form.email2.trim()) {
     errors.email2 = "Ambos correos deben ser iguales.";
   }
-  return errors ;
+  return errors;
 };
 
+// carrito de compras
 export const Cart = () => {
-  const { cart, limpiarCart, getTotalPrice, borrarCart} = useCartContext();
+  const { cart, limpiarCart, getTotalPrice, borrarCart } = useCartContext();
   const [active, setActive] = useState(false);
   const [form, setForm] = useState(initialForm);
   const [errors, setError] = useState({});
@@ -71,6 +70,7 @@ export const Cart = () => {
   const [email, setEmail] = useState("");
   const [email2, setEmail2] = useState("");
 
+  // creador de ordenes de compra
   const createOrder = async () => {
     const items = cart.map(({ id, title, cantidad, price }) => ({
       id,
@@ -93,31 +93,26 @@ export const Cart = () => {
     limpiarCart();
   };
 
-  
   const handleChange = ({ target: { value, name } }) => {
     setForm({
       ...form,
       [name]: value,
     });
-  
+
     const newErrors = validarFormulario(initialForm, {
       ...form,
       [name]: value,
     });
-  
+
     setError(newErrors);
-  
-    const isValid = Object.values(newErrors).every(error => !error);
+
+    const isValid = Object.values(newErrors).every((error) => !error);
     setFormIsValid(isValid);
-    
   };
 
   const handleBlur = (e) => {
     e.preventDefault();
     handleChange(e);
- 
-
-
   };
 
   return (
@@ -126,6 +121,7 @@ export const Cart = () => {
         className="container-cart-icon"
         onClick={() => setActive(!active)}
       ></div>
+      {/* dibujod de cada seleccion que se hace para cargar el carrito */}
       {cart.length ? (
         <>
           {cart.map((Item) => (
@@ -176,6 +172,7 @@ export const Cart = () => {
               Vaciar Carrito
             </button>
           </div>
+          {/* formulario de compra */}
           <div className="formulario">
             <div className="formulario__grupo" id="grupo__nombre">
               <label className="formulario__label">Nombre</label>
@@ -271,7 +268,7 @@ export const Cart = () => {
               >
                 Confirmar Compra
               </button>
-              
+
               <p
                 className="formulario__mensaje-exito"
                 id="formulario__mensaje-exito"

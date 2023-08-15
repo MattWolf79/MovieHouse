@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import {Carrito} from "../Carrito/Carrito";
+import { Carrito } from "../Carrito/Carrito";
 import { SearchMovie } from "../SearchComponent/SearchMovie";
 import logo from "../../img/logoCata.png";
 
@@ -12,21 +12,15 @@ const NavBar = () => {
     setMenu(!menu);
   };
 
-
-
-
   return (
-
-
-
     <div>
-      <nav className="NavBar" >
+      <nav className="NavBar">
         <NavLink to="/">
           <img className="NavBarLogo" src={logo} />
         </NavLink>
         <div>
-          <SearchMovie/>
-        </div>  
+          <SearchMovie />
+        </div>
         {/* botón para el menú, que debería contenet los li  */}
         <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
           <button onClick={toggleMenu} className="Cabecera-button">
@@ -45,7 +39,9 @@ const NavBar = () => {
             <NavLink to="/">
               <nav className="NavBar-li">Inicio</nav>
             </NavLink>
-            <nav className="NavBar-li"><a href="#">Ayuda</a></nav>
+            <nav className="NavBar-li">
+              <a href="#">Ayuda</a>
+            </nav>
             <div className="NavBar-ul">
               <div className="dropdown" color="green">
                 <li
@@ -84,11 +80,9 @@ const NavBar = () => {
                   <li>
                     <NavLink to={"/category/policial"}>Policiales</NavLink>
                   </li>
-                 
                 </ul>
-                
               </div>
-            </div>            
+            </div>
           </nav>
         </nav>
         <div className="Carrito">
