@@ -4,7 +4,6 @@ import { addOrder } from "../movie/order.request";
 import { updateManyMovies } from "../movie/ProductMovies";
 import { Loader } from "../components/Loader/Loader";
 import "../js/formulario.css";
-// import {FaCheckCicleFill} from "react-icons/fa";
 
 const inputs = document.querySelectorAll("#formulario input");
 
@@ -14,6 +13,8 @@ const initialForm = {
   email2: "",
   telefono: "",
 };
+
+
 
 let styles = {
   fontWeigth: "bold",
@@ -53,17 +54,16 @@ const validarFormulario = (initialForm, form) => {
   if (form.email.trim() != form.email2.trim()) {
     errors.email2 = "Ambos correos deben ser iguales.";
   }
-
-  return errors;
+  return errors ;
 };
 
 export const Cart = () => {
-  const { cart, limpiarCart, getTotalPrice, borrarCart } = useCartContext();
+  const { cart, limpiarCart, getTotalPrice, borrarCart} = useCartContext();
   const [active, setActive] = useState(false);
   const [form, setForm] = useState(initialForm);
   const [errors, setError] = useState({});
   const [loading, setLoading] = useState(false);
-  const [botonActivo,setBotonActivo] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
 
   // useState para la orden
   const [nombre, setNombre] = useState("");
@@ -99,12 +99,25 @@ export const Cart = () => {
       ...form,
       [name]: value,
     });
-    setError(validarFormulario(initialForm, form));
+  
+    const newErrors = validarFormulario(initialForm, {
+      ...form,
+      [name]: value,
+    });
+  
+    setError(newErrors);
+  
+    const isValid = Object.values(newErrors).every(error => !error);
+    setFormIsValid(isValid);
+    
   };
 
   const handleBlur = (e) => {
     e.preventDefault();
     handleChange(e);
+ 
+
+
   };
 
   return (
@@ -173,9 +186,9 @@ export const Cart = () => {
                   name="nombre"
                   id="nombre"
                   placeholder="Mi Nombre"
+                  value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                   onBlur={handleBlur}
-                  required
                 />
               </div>
 
@@ -194,10 +207,10 @@ export const Cart = () => {
                   className="formulario__input"
                   name="telefono"
                   id="telefono"
+                  value={telefono}
                   placeholder="4491234567"
                   onChange={(e) => setTelefono(e.target.value)}
                   onBlur={handleBlur}
-                  required
                 />
                 <i className="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
@@ -213,10 +226,10 @@ export const Cart = () => {
                   className="formulario__input"
                   name="email"
                   id="email"
+                  value={email}
                   placeholder="correo@correo.com"
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={handleBlur}
-                  required
                 />
                 <i className="formulario__input-error"></i>
               </div>
@@ -233,6 +246,7 @@ export const Cart = () => {
                   className="formulario__input"
                   name="email2"
                   id="email2"
+                  value={email2}
                   placeholder="Repetir correo"
                   onChange={(e) => setEmail2(e.target.value)}
                   onBlur={handleBlur}
@@ -253,10 +267,11 @@ export const Cart = () => {
                 type="submit"
                 className="formulario__btn"
                 onClick={createOrder}
+                disabled={!formIsValid} // Aquí se deshabilita si el formulario no es válido
               >
                 Confirmar Compra
               </button>
-
+              
               <p
                 className="formulario__mensaje-exito"
                 id="formulario__mensaje-exito"

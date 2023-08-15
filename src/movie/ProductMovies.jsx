@@ -53,7 +53,7 @@ export const updateManyMovies = async ( items ) => {
   const batch = writeBatch(db);
   
   items.forEach(({id, cantidad})=>{ 
-    console.log (cantidad);
+    
     batch.update(doc(db, "products", id), {stock: increment(-cantidad)})
   })
 

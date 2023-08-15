@@ -9,27 +9,10 @@ export const SearchMovie = () => {
   const [busqueda, setBusqueda] = useState("");
   const [movie, setMovie] = useState([]);
 
-  // const fetchData = (value)=>{
-  //   fetch("https://jsonplaceholder/typicode.com/users").then((response)=>response.json()).then(json=>{
-  //       console.log(json);
-  //   });
-  //  };
-
-
-  const handleChange = (e) => {
+   const handleChange = (e) => {
     setBusqueda(e.target.value);
-    console.log(e.target.value);
   };
 
-
-
-  // const showData  =async ()=>{
-  //   const response=await fetch(URL)
-  //   const data=await response.json
-  //   console.log(data)
-  // }
-
-  // showData();
 
   useEffect(() => {
     searchMovie(busqueda.toLowerCase()).then((res) => {
